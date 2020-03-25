@@ -6,6 +6,8 @@
 \usepackage[T2A]{fontenc} % enable Cyrillic fonts
 \usepackage[utf8]{inputenc} % make weird characters work
 \usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{pgfplots}
 
 \usepackage[english,serbian]{babel}
 %\usepackage[english,serbianc]{babel} %ukljuciti babel sa ovim opcijama, umesto gornjim, ukoliko se koristi cirilica
@@ -53,9 +55,9 @@
 
 \begin{document}
 
-\title{Naslov seminarskog rada\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
+\title{Desavanja u Beogradu: 8 udruzenja koja organizuju redovne IT strucne sastanke (meet up) \\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
 
-\author{Djordje Vujinovic, Nebojsa Koturovic, Igor Radojevic, Bojan Stefanovic\\ kontakt email prvog, drugog, trećeg, četvrtog autora}
+\author{Djordje Vujinovic, Nebojsa Koturovic, Igor Radojevic, Bojan Stefanovic\\ vujinovic.djordje@gmail.com, email prvog, drugog, trećeg, četvrtog autora}
 
 %\date{1.~april 2020.}
 
@@ -70,6 +72,46 @@ U ovom tekstu je ukratko prikazana osnovna forma seminarskog rada. Obratite paž
 
 \section{Uvod}
 \label{sec:uvod}
+
+\section{PHP Serbia Meetup}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.25]{php_gray.jpg}
+\end{center}
+\caption{PHP Srbija logo}
+\label{fig:pande}
+\end{figure}
+PHP je popularan skriptni programski jezik za izradu dinamičkih web stranica. Prema mnogim listama, PHP spada u top 10 najpopularnijih programskih jezika \cite{phpMostPopular}. U Srbiji takođe spada među najpopularnije jezike, što opravdava veliku zajednicu i višegodišnje okupljanje \cite{phpSerbiaPopularity}.
+
+Prvi PHP Serbia Meetup organizovan je u julu 2015. godine u KC Gradu, i tadašnji plan je bio da se okupljanja održavaju svakog meseca. Do sada je organizovano 38 okupljanja u Beogradu, ne računajući radionice i panele. Predavači su uglavnom PHP programeri, a teme koje se obrađuju su vezane za sam jezik, alate, framework-e, kao i iskustva i probleme sa kojima programeri mogu da se susretnu.
+
+Forma za prijavljivanje u svojstvu predavača se može naći na zvaničnom sajtu PHP Srbije www.phpsrbija.rs. Prijavljivanje u svojstvu slušaoca je besplatno, samo je potrebno prijaviti se na meetup.com/PHPSrbija.
+
+Iza samog okupljanja stoji organizacija PHP Srbija koja je zaslužna i za PHP Srbija konferenciju koja je dovele neke od najboljih svetskih predavača, kao i kreatora programskog jezika PHP Rasmusa Lerdorfa \cite{phpRasmusLerdorf}. \\
+
+\begin{tikzpicture}
+\begin{axis}[
+    title={Posećenost PHP Serbia Meetup-a},
+    xlabel={Redni broj okupljanja},
+    ylabel={Broj posetilaca},
+    xmin=0, xmax=40,
+    ymin=0, ymax=180,
+    xtick={0,5,10,15,20,25,30,35,40},
+    ytick={0,20,40,60,80,100,120,140,160},
+    legend pos=north west,
+    ymajorgrids=true
+]
+
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+    (1,55)(2,83)(3,86)(4,113)(5,110)(6,89)(7,45)(8,72)(9,66)(10,82)(11,64)(12,94)(13,82)(14,35)(15,73)(16,137)(17,165)(18,137)(19,133)(20,159)(21,116)(22,96)(23,137)(24,56)(25,139)(26,49)(27,91)(28,63)(29,95)(30,80)(31,62)(32,35)(33,88)(34,59)(35,41)(36,50)(37,88)(38,42)
+    };
+    
+\end{axis}
+\end{tikzpicture}
 
 
 \section{1 meet-up}
