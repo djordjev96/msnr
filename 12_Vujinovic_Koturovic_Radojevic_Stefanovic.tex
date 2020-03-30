@@ -289,9 +289,88 @@ Najnovije informacije možete naći na zvaničnom sajtu (\url{http://www.agile-s
 
 
 
-\section{7 Meetup}
+\section{JS Belgrade Meetup}
+\label{sec:JSBM}
 
-\section{8 Meetup}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.25]{JS_logo.png}
+\end{center}
+\caption{JS Belgrade Meetup logo}
+\label{fig:JS_slika}
+\end{figure}
+
+JavaScript je skript programski jezik koji je inicijalno napravljen za web programiranje na klijentskoj strani. JavaScript se interpretira i danas se moze izvrsavati i van brauzera, moze se izvsavati i na serveru, zapravo moze se izvrsavati na bilo kojem uredjaju koji ima specijalan program nazvan JavaScript engine \cite{aboutJS}. 
+
+JS Belgrade Meetup ciji je logo prikazan na slici \ref{fig:JS_slika} je JavaScript korisnicka grupa organizovana 2014 godine od strane Slobodana Stojanovica, Bogdana Gavrilovica i Alexandera Simovica sa ciljem da povezu ljude zainteresovane za JavaScript kroz mesecna okupljanja bilo da ga oni svakodnevno koriste ili su početnici koji samo žele da saznaju nesto više o JavaScript-u \cite{JS_Belgrade_meetup_pocetna}. 
+
+Prvo JS Blegrade okupljanje bilo je 27.12.2014 u Beogradu u prostorijama Cloud Horizona na kojoj je prisustvovalo 15 osoba i bilo je reci na temu "AngularJS - juce, danas i sutra". Do sada je organizovano 36 okupljanja u Beogradu, ne računajući radionice i druzenja u Koffein-u. Od tih 36 okupljanja, koliko je okupljanja odrzano u kojoj godini mozete videti na tabeli \ref{tab:JStabela1}, a broj prisutnih na svakom od tih okupljanja mozete videti na slici \ref{fig:JSgrafik}, a detalje o 7 najposecenijih okupljanja mozete videti na tabeli \ref{tab:JStabela2}. Okupljanja su se organizovala na razlicitim lokacijama, od kojih je vecina bila u ICT HUB prostorijama i u Cloud Horizon prostorijama, ali i na drugim lokacijama poput Matematicki fakultet, Crowne Plaza Belgrade, Startit Centar itd. Informacije o proslim i buducim okupljanjima mozete naci na linku: \url{https://www.meetup.com/JS-Belgrade-Meetup/events/}. Svako ko hoce moze da prisustvuje okupljanjima kao slusalac samo je potrebno na vreme se prijaviti jer su mesta uglavnom ogranicena. Takodje svako ko zeli da prica na okupljanju zahtev za razgovor moze podneti na linku: \url{www.jsbelgrade.org/teme/}, a upustvo za prijavu ima na linku: \url{https://github.com/JSBelgrade/cfp}. Pocev od 19.01.2016. godine svakog drugog utorka od 8 do 10 ujutru se organizuje druzenje u kaficu Koffein koji se nalazi u ulici Uskocka 8. u Beogradu sa ciljem da se okupe ljudi zainteresovani za JavaSript i upoznaju. Na tom druzenju nema predavanja ni bilo kakvog isplaniranog programa vec je to druzenje uz kafu i pricanje o raznim temama koje ne moraju biti vezane za JavaScript\cite{JS_Belgrade_meetup_events}.
+
+Ideja JS Belgrade je da s vremena na vreme gostuje i van Beograda. Prvo takvo okupljanje je bilo u Nisu 19.03.2016 godine na kom je prisustvovalo 7 osoba. Drugo takvo okupljanje bila je radionica u Indjiji 26.03.2016. godine i to su jedina dva okupljanja van Beograda \cite{JS_Belgrade_meetup_events}.
+
+Github repozitorijum na linku: \url{https://github.com/JSBelgrade}, mejl: \url{sbelgradeorg@gmail.com}, fejsbuk grupa na linku: \url{https://www.facebook.com/jsbelgrade/},
+za diskusiju i sva dodatna pitanja o sastancima i o temama vezanim za JavaScript možete koristiti link: \url{http://slack.jsbelgrade.org}, vebsajt JS Belgrade grupe mozete naci na linku: \url{http://jsbelgrade.org/}.
+
+\begin{table}[h!]
+\begin{center}
+\caption{Jos ne znam koji naslov}
+\begin{tabular}{ |c|c|c|c|c|c|c|c| } 
+ \hline
+ godina & 2014 & 2015 & 2016 & 2017 & 2018 & 2019 & 2020 \\ 
+ \hline
+ \makecell[c]{br.\\semestara} & 1 & 12 & 8 & 8 & 5 & 1 & 1 \\
+ \hline
+\end{tabular}
+\label{tab:JStabela1}
+\end{center}
+\end{table}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={Redni broj okupljanja},
+    ylabel={Broj posetilaca},
+    xmin=0, xmax=40,
+    ymin=0, ymax=260,
+    xtick={0,5,10,15,20,25,30,35,40},
+    ytick={0,20,40,60,80,100,120,140,160, 180, 200, 220, 240, 260},
+    legend pos=north west,
+    ymajorgrids=true
+]
+
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+    (1,15)(2,12)(3,15)(4,19)(5,99)(7,12)(8,22)(9,110)(10,244)(11,99)(12,110)(13,25)(14,30)(15,103)(16,17)(17,29)(18,90)(19,67)(20,20)(21,30)(22,210)(23,138)(24,82)(25,96)(26,101)(27,99)(28,47)(29,70)(30,70)(31,74)(32,76)(33,80)(34,98)(35,80)(36,45)
+    };
+    
+\end{axis}
+\end{tikzpicture}
+\caption{Posecenost JS Belgrade okupljanja u Beogradu(nedostaju podaci za sesto okupljenje)}
+\label{fig:JSgrafik}
+\end{figure}
+
+\begin{table}[h!]
+\begin{center}
+\caption{Sedam najposecenijih JS Belgrade okupljanja}
+\begin{tabular}{|l|l|l|l|} \hline
+\thead{Tema} & \thead{Predavač} & \thead{Datum} & \thead{Br. učesnika}\\ \hline
+\makecell[l]{Hoodie, npm and semantic release}&\makecell[l]{Stephan Bonnemann}&08.08.2015. & 110\\ \hline
+\makecell[l]{Different Characters \\Code Golf, JavaScript, Creative coding, Hacks}&\makecell[l]{Martin Kleppe}&05.09.2015. & 244\\ \hline
+\makecell[l]{Internet of Things using JavaScript for fun\\and profit}&\makecell[l]{Dejan Dimić}&28.11.2015. & 110\\ \hline
+\makecell[l]{Mikroservisi (skoro) za dz: AWS + Node.JS}&\makecell[l]{Gojko Adžić}&13.02.2016. & 103\\ \hline
+\makecell[l]{Theme 1: "Async approaches: Promises\\vs Callbacks"\\Theme 2: "Extreme performances: JS\\vs ASMjs vs PNaCl vs UWP"}&\makecell[l]{Miloš Žikić}&28.01.2017. & 210\\ \hline
+\makecell[l]{Theme1: "Introduction to Elm"\\Theme 2: "Developer UX, REST and the rest"}&\makecell[l]{Bojan Matić(Theme 1)\\Miloš Solujić(Theme 2)}&18.02.2017. & 138\\ \hline
+\makecell[l]{ "React component testing using snapshots"}&\makecell[l]{Boris Aržentar}&26.06.2017. & 101\\ \hline
+\end{tabular}
+\label{tab:JStabela2}
+\end{center}
+\end{table}
+
+ \section{8 Meetup}
 
 
 \newpage %TODO(moze zakljucak na novu stranu a i ne mora)
