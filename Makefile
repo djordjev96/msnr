@@ -1,4 +1,4 @@
-FILE=12_Vujinovic_Koturovic_Radojevic_Stefanovic
+FILE=12_MeetupBgd_Vujinovic_Koturovic_Radojevic_Stefanovic
 
 $(FILE).pdf:$(FILE).tex
 	./make.sh $(FILE).tex
