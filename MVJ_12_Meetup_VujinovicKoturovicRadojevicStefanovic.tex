@@ -1,0 +1,408 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[a4paper]{article}
+
+\usepackage{color}
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+\usepackage[T2A]{fontenc} % enable Cyrillic fonts
+\usepackage[utf8]{inputenc} % make weird characters work
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{pgfplots}
+
+\usepackage[english,serbian]{babel}
+%\usepackage[english,serbianc]{babel} %ukljuciti babel sa ovim opcijama, umesto gornjim, ukoliko se koristi cirilica
+
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
+
+\usepackage{listings}
+
+%\newtheorem{primer}{Пример}[section] %ćirilični primer
+\newtheorem{primer}{Primer}[section]
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ 
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\scriptsize\ttfamily,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  firstnumber=1000,                % start line enumeration with line 1000
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Python,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\begin{document}
+
+%\title{Desavanja u Beogradu: 8 udruzenja koja organizuju redovne IT strucne sastanke (meet up) \\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
+
+\title{Udruženja koja organizuju redovna IT okupljanja u Beogradu\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
+
+\author{Đorđe Vujinović, Nebojša Koturović, Igor Radojević, Bojan Stefanović\\ ai15245@alas.matf.bg.ac.rs, mi15139@alas.matf.bg.ac.rs, \\ mi18493@alas.matf.bg.ac.rs, mi15022@alas.matf.bg.ac.rs}
+
+%vujinovic.djordje@gmail.com
+%\date{1.~april 2020.}
+
+\maketitle
+
+\abstract{
+Kroz ovaj rad čitalac će se upoznati sa nekim od najpoznatijih IT organizacija u Beogradu koje organizuju redovne susrete. Za svaku organizaciju ukratko su predstavljeni ciljevi, mesto održavanja sastanaka, razlozi održavanja, kao i istorijat same organizacije. Saznaćete za koga su okupljanja namenjena, ko su predavači i koliko učesnika ima. Za svako okupljanje navedeni su načini kako se može prijaviti u svojstvu predavača/slušaoca, kao i adrese ka sajtovima organizacija.
+
+\textbf{Ključne reči:} \textit{organizacija, udruženje, sastanak, meetup, okupljanje, php, wordpress, javascript, python, agile, risk, crypto}
+
+\tableofcontents
+
+\newpage
+\section{Uvod}
+
+Velika ekspanzija IT sektora, poslednjih godina u Beogradu, dovela je do velike popularnosti IT događaja. U skladu sa globalnim trendom raste broj susreta, konferencija, seminara a i predavača i učesnika na njima.
+ 
+Susret (eng. meetup) je okupljanje ljudi sa istim intresovanjem za neku određenu temu. Obično se sastoji od formalnog dela tj. nekog predavanja i diskusije o toj temi, zatim neke radionice, koja ne mora nužno postojati.  Završni segment je obično rezevrisan za druženje i osveženje. To je šansa za povezivanje ljudi, ostvarivanje biznis kontakata i stvaranje novih ideja. Dosta kompanija vide šansu u susretima da doprinesu svom ugledu i brendu i tako privuku nove kandidate za svoj tim.
+U daljem tekstu predstavićemo Vam sledeće organizacije: PHP Srbija, WorldPress Serbia, Python Belgrade, Risk, Belgrade Crypto Community, Agile Serbia i JS Belgrade.
+
+\section{PHP Srbija}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.25]{php_gray.jpg}
+\end{center}
+\caption{PHP Srbija logo}
+\label{fig:phpSrbija}
+\end{figure}
+PHP je popularan skriptni programski jezik za izradu dinamičkih veb stranica. U svetu, kao i u Srbiji, PHP trenutno spada u top 10 najpopularnijih programskih jezika \cite{phpMostPopular,phpSerbiaPopularity}.
+
+Prvo PHP Srbija okupljanje organizovano je u julu 2015. godine u KC Gradu, i tadašnji plan je bio da se okupljanja održavaju svakog meseca. Do sada je organizovano 38 okupljanja u Beogradu, ne računajući radionice i panele. Predavači su uglavnom PHP programeri i sistem administratori, a teme koje se obrađuju su vezane za sam jezik, alate, framework-e, kao i iskustva i probleme sa kojima programeri mogu da se susretnu. Neke teme i predavače možete videti u tabeli \ref{tab:tabelaPHP}.  Na kraju svakog okupljanja slede pitanja posetilaca ili panel diskusija na neku temu.\\
+Broj posetilaca na okupljanjima varira, a na nekima je prešao broj od 160. Posećenost na okupljanjima možete videti na grafikonu \ref{fig:PHPgrafik} \cite{phpEvents}. Danas se okupljanja održavaju najčešće u StartIt centru.
+
+Iza samog okupljanja stoji organizacija PHP Srbija koja je zaslužna i za PHP Srbija konferenciju koja je dovele neke od najboljih svetskih predavača, kao i kreatora programskog jezika PHP Rasmusa Lerdorfa \cite{phpRasmusLerdorf}. Logo organizacije možete videti na slici \ref{fig:phpSrbija}.
+
+Forma za prijavljivanje u svojstvu predavača se može naći na zvaničnom sajtu PHP Srbije \url{https://phpsrbija.rs/}. Prijavljivanje u svojstvu slušaoca je besplatno, samo je potrebno prijaviti se na \url{https://meetup.com/PHPSrbija}.
+
+Iz ovog okupljanja stvorilo se još nekoliko samostalnih zajednica kao na primer Laravel Serbia. 
+Neka od već održanih predavanja sa okupljanja i konferencija dostupna su na YouTube kanalu ove organizacije \url{https://www.youtube.com/user/PHPSrbijaVideo/}.
+
+
+\begin{table}[h!]
+\begin{center}
+\caption{Neke od tema sa PHP Srbija okupljanja}
+\begin{tabular}{|l|l|l|} \hline
+\thead{Tema}& \thead{Predavač}&\thead{Datum}\\ \hline
+FigDice template engine&Nikola Posa&21.07.2015.\\ \hline
+JMeter i Performance Testing&Nebojša Videnov&15.12.2015.\\ \hline
+\makecell[l]{Beginner talk: The road to\\become a junior developer}&\makecell[l]{Vladimir Živadinović, \\ Operations manager}&15.11.2016.\\ \hline
+\makecell[l]{PHP Aplikacije u \\produkcionom okruženju}&\makecell[l]{Nikola Krgović,\\Sistem administrator}&26.12.2017.\\ \hline
+\makecell[l]{Razvoj efikasnih API servisa - \\Laravel i GraphQL}&\makecell[l]{Peđa Jevtić,\\Full stack developer}&16.02.2019.\\ \hline
+\end{tabular}
+\label{tab:tabelaPHP}
+\end{center}
+\end{table}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={Redni broj okupljanja},
+    ylabel={Broj posetilaca},
+    xmin=0, xmax=40,
+    ymin=0, ymax=180,
+    xtick={0,5,10,15,20,25,30,35,40},
+    ytick={0,20,40,60,80,100,120,140,160},
+    legend pos=north west,
+    ymajorgrids=true
+]
+
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+    (1,55)(2,83)(3,86)(4,113)(5,110)(6,89)(7,45)(8,72)(9,66)(10,82)(11,64)(12,94)(13,82)(14,35)(15,73)(16,137)(17,165)(18,137)(19,133)(20,159)(21,116)(22,96)(23,137)(24,56)(25,139)(26,49)(27,91)(28,63)(29,95)(30,80)(31,62)(32,35)(33,88)(34,59)(35,41)(36,50)(37,88)(38,42)
+    };
+    
+\end{axis}
+\end{tikzpicture}
+\caption{Posećenost na PHP Srbija okupljanjima u Beogradu}
+\label{fig:PHPgrafik}
+\end{figure}
+
+\section{WordPress Serbia}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.5]{wp.jpg}
+\end{center}
+\caption{WordPress Serbia logo}
+\label{fig:wordpressLogo}
+\end{figure}
+WordPress predstavlja jedan od najpopularnijih sistema za upravljanje sadržajem (eng.~{\em Content Management System - CMS}) \cite{isitwp}. Zbog lakoće podešavanja, brzog rasta platforme, mogućnosti kreiranja dodataka i tema kao i korišćenje velikog broja besplatnih iz njihovog marketa, ubrzo je pridobio pažnju programera i entuzijasta u Srbiji. WordPress Serbia je organizacija koja za cilj ima da ih sve okupi na jednom mestu. Logo organizacije možete videti na slici \ref{fig:wordpressLogo}.
+
+Prvo WordPress Serbia okupljanje održano je u aprilu 2013. godine. Sledeće godine održavaju se ukupno 4 okupljanja, od čega su prva tri održana u Mikser House-u, dok je poslednji održan u Domu omladine u tribinskoj sali. Ubrzo nastaje potreba širenja zajednice, tako da okupljanja počinju i u Nišu, Inđiji, Šapcu, Boru, Vranju, Kruševcu, Subotici, Novom Sadu, Zrenjaninu itd. Pored okupljanja kreću i sa radionicama koje su namenjene svima koji žele da nauče više o WordPress-u. Danas se u Beogradu okupljanja naješće organizuju u StartIt centru.
+
+Teme koje se obrađuju na okupljanjima su prilagođene početnicima, programerima, kao i ostatku IT zajednice. Neke od tema sa okupljanja se nalaze u tabeli \ref{tab:tabelaWordpress}. \\
+\begin{table}[h!]
+\begin{center}
+\caption{Neke od tema sa WordPress Serbia okupljanja}
+\begin{tabular}{|l|l|l|} \hline
+\thead{Tema} & \thead{Predavač}&\thead{Datum}\\ \hline
+WordPress security & \makecell[l]{Predrag Cujanovic - \\CEO, CyberTec Security}&22.04.2014.\\ \hline
+\makecell[l]{Scaling WordPress \\with Amazon cloud} &\makecell[l]{Miljenko Rebernisak,\\Devana Technologies}&05.07.2015.\\ \hline %TODO(nkoturovic: Ovde je bio neki cudan karakter zbog kog nije htelo da se kompajlira!)
+\makecell[l]{Optimizacija veb-sajta za \\pretraživače - Pravila za \\dobru optimizaciju} &Stevica Gološin&07.12.2016.\\ \hline
+\end{tabular}
+\label{tab:tabelaWordpress}
+\end{center}
+\end{table}
+
+
+Predavači su najčešće programeri, firme koje se bave izradom tema i dodataka za WordPress, dizajneri, kao i sistem administratori. Za predavača može da se prijavi bilo ko ko želi da podeli svoje iskustvo i znanje. 
+
+Prijavljivanje za predavača je putem google forme na adresi \url{https://docs.google.com/forms/d/1kHF5Vi-35FkmAkRzdsHiQOoKrIPGOjKgVRE8mAgjA-g}. Prijavljivanje u svojstvu slušaoca je besplatno, potrebno je samo da se na adresi \url{https://www.meetup.com/WordPress-Serbia/} prijavi na željeni događaj.
+
+Pored Meetup-a, WordPress Serbia organizuje i WordCamp konferencije na kojima gostuju svetski poznati predavači, a posetioci dolaze iz čitave Evrope i sveta \cite{wpWordCamp}.
+
+\section{Python Belgrade}
+\label{sec:pybgd}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.3\textwidth]{pybgd.png}
+  \caption{Python Belgrade logo}
+  \label{fig:Pythonlogo}
+\end{figure}
+
+Python Belgrade čiji logo se nalazi na slici \ref{fig:Pythonlogo} je nevladina organizacija koja organizuje okupljanja za sve Python entuzijaste. Ova okupljanja namenjena su svim
+zainteresovanima za jezik Python, pre svega programerima, ali i svim onima koji žele da upotpune svoje znanje ovog programskog jezika i njegovih mogućnosti.
+
+Jezik Python je nesumnjivo jedan od najpopularnijih programskih jezika danas. Sudeći po istraživanju kompanije TIOBE, jezik Python ima sigurno mesto u top 10 najpretraživanijih jezika na poznatim veb pretraživačima. \cite{pythonPopular}.
+
+Kako i samo ime organizacije kaže, sastanci se organizuju na teritoriji grada Beograda. Ova organizacija nema svoje prostorije, a lokacija, kao i ostale informacije
+za sledeći susret dostupne su na oficijalnom veb-sajtu organizacije (\url{https://pythonbelgrade.com/}). Ova organizacija je svakako jedna od značajnijih IT organizacija koje organizuju okupljanja na teritoriji Beograda. Osnovana je 2015. godine i od tada se predavanja održavaju svakih par meseci bez striktnog međuintervala. 
+
+Na čelu ove organizacije, ispred grupe mladih ljudi, je njen domaćin i osnivač \textit{Bojan Jovanović}. Bojan je mladi entuzijasta koji je i sam imao dosta radnog iskustva u ovom jeziku nakon završenih studija na
+Elektrotehničkom fakultetu. Pored toga što je osnivač Python Belgrade organizacije, on je i jedan od osnivača PyCon Balkan konferencije (\url{https://pyconbalkan.com/}). Ova konferencija važi za jednu od najpoznatinjih konferencija vezanih za programiranje na ovim prostorima.
+
+Predavači na Python Belgrade okupljanjima su najčešće ljudi koji su zaposleni ili imaju neke veze sa IT sektorom, ali neretko i ljudi sa univerziteta. \cite{pybgdSpeakers} Iako se predavanja održavaju na srpskom jeziku, dešavalo se da zbog prisustva stranih slušalaca u duhu solidarnosti bude napravljen izuzetak i predavanje se održi na engleskom jeziku. Na okupljanjima se nesumnjivo oseća mladalački duh i želja za napredovanjem. Uvek vlada prijateljska atmosfera, nađu se tu grickalice i osveženje, pa nije ni čudo što se okupljeni između sebe zovu ``Pytosi''.
+
+Putem veb-sajta \url{https://pythonbelgrade.com/} se može prijaviti za prisustvo nekom od okupljanja, a obaveštenja se objavljuju i na facebook grupi \href{https://www.facebook.com/python.belgrade/}{@python.belgrade} i \href{https://pythonbelgrade.slack.com/join/shared_invite/enQtNTM0OTI4NzY3NDI2LTk2OThkNjQ2YmM5NWNkNTBjMjU3NDY0NjcyNDFiYmZmNjQ4MDE3NjczYWM0NTk1YWVlYzlhNGIwYjU3NjA3Y2Y}{slack kanalu}. Svako ko želi da se prijavi u svojstvu predavača potrebno je da popuni odgovarajuću veb formu za prijavu na \href{https://pythonbelgrade.com/}{veb-sajtu} organizacije (\url{https://pythonbelgrade.com/#contact}). Predavanja se mogu pratiti i putem video linka uživo, gde se takođe mogu postavljati pitanja. Neka od već održanih predavanja dostupna su na YouTube kanalu ove organizacije (\url{https://www.youtube.com/channel/UCH79IYl8rv2f2BrYs5owB2A}).
+
+
+\section{RISK}
+\label{sec:riskmatf}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.4\textwidth]{riskmatf.png}
+  \caption{RISK logo}
+  \label{fig:RISKlogo}
+\end{figure}
+
+RISK predstavlja organizaciju koja za cilj ima okupljanje i edukaciju studenata zainteresovanih za oblast računarstva i informatike. \cite{aboutRisk}
+Logo RISK-a se može videti na slici \ref{fig:RISKlogo}. Ova organizacija ima svoju veb stranu, međutim informacije su dostupne i na facebook grupi, gde se unapred najavljuju okupljanja \url{https://www.facebook.com/groups/1192849077458638/}. Predavanju može prisustvovati bilo ko, mada je poželjno da se prijavi putem veb forme koja je dostupna pre svakog okupljanja. Najveći broj slušalaca su
+studenti Matematičkog, ali tu su i kolege sa ETF-a, FON-a i ostalih srodnih fakulteta.
+
+Udruženje je osnovano u decembru 2016. godine, kada je i održano prvo okupljanje. Okupljanja se organizuju u zgradi ``Matematičkog fakulteta'', a do danas ih je održano preko 20. Najčešće se održavaju vikendom, kada postoje mogućnosti za to. Predavač može biti bilo ko zainteresovan i voljan da podeli svoje programersko umeće. Informacije o nekim okupljanjima se mogu naci na tabeli \ref{tab:tabelaRISK}. Na čelu ove studentske organizacije je Nemanja Mićović, koji je i sam bio student Matematičkog fakulteta, a sada je asistent i pohađa doktorske studije. Pored Nemanje, u organizaciji učestvuju i studenti sa osnovnih i master studija (\url{http://risk.matf.bg.ac.rs/organizacija.html}).
+
+Na predavanjima se obrađuju razne teme vezane za programiranje. Neretko su to radni okviri za razvoj aplikacija, programerski alati i druge tehnologije.
+Pored ovih okupljanja, organizacija može da se pohvali i inspirativnim blog postovima koji su izuzetno zanimljivi. (\url{http://risk.matf.bg.ac.rs/blog.html}).
+
+Svoj doprinos ovoj organizaciji možete ostaviti u vidu saveta, kritika i predloga popunjavanjem odgovarajuće forme na sajtu. Ukoliko ste voljni, možete se uključiti
+i u neki od projekata ove organizacije čiji su izvorni kodovi dostupni na github-u \url{https://github.com/riskmatf/}.
+
+\begin{table}[h!]
+\caption{Neke od tema sa RISK okupljanja}
+\begin{center}
+\begin{tabular}{|l|l|l|} \hline
+\thead{Tema} & \thead{Predavač}& \thead{Datum}\\ \hline
+\makecell[l]{Wifi Hacking}&\makecell[l]{Hacklab Beograd}&23.2.2019.\\ \hline
+\makecell[l]{Uvod u duboko učenje kroz\\PyTorch}&\makecell[l]{Nemanja Mićović}&3.11.2019.\\ \hline
+\makecell[l]{Moderno Android Programiranje}&\makecell[l]{Aleksandar Stefanović}&10.3.2019.\\ \hline
+\makecell[l]{Uvod u razvoj veb aplikacija\\kroz Flask radni okvir.}&\makecell[l]{Stevan Nestorović}&18.3.2018.\\ \hline
+\makecell[l]{Uvod u BASH skripting}&\makecell[l]{Peđa Trifunov}&2.12.2017.\\ \hline
+\makecell[l]{Uvod u blockhain tehnologije\\i decentralizaciju.}&\makecell[l]{DECENTER,\\origintrail}&24.12.2017.\\ \hline
+\makecell[l]{Git i Github}&\makecell[l]{Marko Jeremić}&12.12.2016.\\ \hline
+
+\end{tabular}
+\label{tab:tabelaRISK}
+\end{center}
+\end{table}
+
+
+
+\section{Belgrade Crypto Community}
+\label{sec:bgdcs}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{bcc_logo.png}
+  \caption{Belgrade Crypto Community logo}
+  \label{fig:bgdcclogo}
+\end{figure}
+
+Termini  kriptovaluta, blokčejn, majner, digitalni novčanik i bitkoin su od svog nastanka zaintrigirali i dobili pažnju ne samo IT scene, već i javnosti. To je bilo lakši deo, dok tačno definisanje pojmova, koncepta i relacija među njima baš i ne. Belgrade Crypto Community je organizacija sa ciljem da ovu tematiku popularizuje i prenese svoje znanje na što veći broj ljudi.
+
+Belgrade Crypto je domaća kripto zajednica koja povezuje više od 1200 članova, od korisnika i novajlija do iskusnih programera blokčejna. Njihov logo možete videti na slici \ref{fig:bgdcclogo}. Prostorije im se nalaze u Balkanskoj 2, gde se održavaju okupljanja, dobro su opremljene i imaju kapaciteta za veći broj učesnika. Informacije o samoj zajednici kao i buduće susrete možete naći na zvaničnom veb-sajtu \url{https://belgradecrypto.com/}. Na sajtu postoji blog koji se bavi zanimljivim i aktuelnim temama.
+
+Prvo Belgrade Crypto okupljanje održano je u februaru 2017. godine. Od tad su promenili više lokacija i formata samog okupljanja, trenutno se održavaju svakog drugog četvrtka u mesecu od 18 do 20 časova. U planu je organizacija i u drugim gradovima, a prvi takav je bio u Novom Sadu. Susreti se obično realizuju na jedan od dva načina: 1. opušteno druženje, pričanje o aktulenostima i novitetima; 2. predavanje eksperata. Bilo je i nekoliko radionica, na kojima su učesnici mogli  da se upoznaju sa lokalnom berzom Xcalibra, globalnom platformom za trgovinu Safex i automatom za kupovinom kriptovaluta HashBringer. 
+
+Forme za prijavu u svojstvo predavača ili slušaoca je moguće naći na stranici \url{https://www.meetup.com/Belgrade-Crypto-Community/}. Belgrade Crypto Community ima stranice na društvenim mrežama \url{https://www.facebook.com/BelgradeCryptoCommunity/}, \\ \url{https://twitter.com/Belgrade_Crypto}, \\ \url{https://www.instagram.com/belgrade_crypto/}, preko kojih informiše o svojim aktivnostima. Pojedine susrete i video tutoriale možete naći na You-Tube stranici \\ \url{https://www.youtube.com/channel/UCCv76WWtH9LppS65OCWpI4A/featured}.
+
+
+\section{Agile Serbia}
+\label{sec:agsrb}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{agile_srb.png}
+  \caption{Agile Serbia logo}
+  \label{fig:agslogo}
+\end{figure}
+
+Agilni razvoj softvera je skup okvira i metoda razvoja softvera na principima iterativnog i inkrementalnog razvoja, gde zahteve korisnika u rešenja implementiraju samoorganizovani razvojni timovi \cite{agileForDummies}. Agile Manifesto je nastao u februaru 2001. godine, u gradu Juta, kad su se sastali 17 programera da razgovaraju o lakšim metodama razvoja. Agilna poslovanja rade brže, bolje, sa većom vrednošću izlaznog proizvoda i sa većim procentom uspešno završenih projekata.
+
+Agile Serbia je nastala kao edukativni centar kompanije Puzzle Software 2012. godine. Od tad im je glavni cilj agilni razvoj softvera i njegovo unapređenje. Osnivači imaju bogato iskustvo sa tradicionalnim metodama razvoja softvera i borili se sa izazovima i manama tih metoda. Novi pristup je bio Skram čije korišćenje je delovalo sasvim logično tako da je novi cilj pomoći drugima sa istim problemima i proširiti već postojeće znanje. U istu svrhu je nastao i blog (\url{http://www.agile-serbia.rs/blog/}). Logo Agile Serbia možete videti na slici \ref{fig:agslogo}.
+
+Sama organizacija se nalazi na Banjici, a susrete generalno održavaju u halama prestoničkih hotela, startit ili ict centru.Određen broj susreta je bio u Novom Sadu i Nišu. Od 2012 okupljanja se organizuju fleksibilno u skladu sa agile duhom, nekad jednom u mesecu, nekad jednom u tri meseca, sa time što mesec maj obično bude mesec agilnog razvoja i tad ima dosta dešavanja. Predavači su ljudi sa dugogodišnjim iskustvom iz zemlje, a i iz inostranstva. Posebno su ponosni na činjenicu da je nekoliko ko-kreatora agilnog manifesta održalo predavanje na njihovim skupovima. Neke teme, predavače i broj učesnika možete videti u tabeli \ref{tab:tabelaAgS}.
+
+Pored susreta, Agile Serbia pravi jednom godišnje konferenciju Agile Serbia Conference. Četvrto izdanje se održalo sredinom juna 2019 u prostorijama Madlenianuma i zvanični moto je bio "Agile, In \& Beyond IT". Bilo je preko 550 učesnika, 14 predavača na 3 bine i preko 45 zvaničnih partnera. Među predavačima je bio Jeff Sutherland, ko-kreator agilnog manifesta i skrama, Sander Hoogendoorn, Riina Hellstrom, pionir agila u hr, Miloš Zeković, Ivan Avdić, Predrag Rajković i mnogi drugi.\\
+
+\begin{table}[h!]
+\caption{Neke od tema sa Agile Serbia okupljanja}
+\begin{center}
+\begin{tabular}{|l|l|l|l|} \hline
+\thead{Tema} & \thead{Predavač} & \thead{Datum}\\ \hline
+\makecell[l]{Product Owner as a Product \\Mana	ger and Product Developer}&\makecell[l]{Predrag Rajković}&17.10.2019.\\ \hline
+\makecell[l]{The 4 Dynamics of Agility \\that Every Scrum Master and \\Leader Should Know}&\makecell[l]{Miljan Bajić}&10.09.2019.\\ \hline
+\makecell[l]{Uvod u Agile i Scrum}&\makecell[l]{Miloš Zeković}&28.03.2019.\\ \hline
+\makecell[l]{Da li Design Sprint ima smisla\\u korporaciji?}&\makecell[l]{Predrag Rajković i\\Zoran Vujkov}&30.10.2018.\\ \hline
+\makecell[l]{Kako biti lider u napetoj radnoj\\sredini?}&\makecell[l]{Olaf Lewitz}&25.10.2018.\\ \hline
+\makecell[l]{Gasi teoriju! Pali praksu!}&\makecell[l]{Davor Čengija i\\Ivan Krnić}&05.12.2017.\\ \hline
+\makecell[l]{Da li ste dovoljno agilni?}&\makecell[l]{Zoran Vujkov}&01.10.2016.\\ \hline
+\end{tabular}
+\label{tab:tabelaAgS}
+\end{center}
+\end{table}
+
+Najnovije informacije možete naći na zvaničnom sajtu (\url{http://www.agile-serbia.rs/}) ili na društvenim mrežama (\url{https://www.facebook.com/AgileSerbia/}), (\url{https://twitter.com/PuzzleSoft}), (\url{https://www.youtube.com/channel/UC01ZnqLRvcxG9CH3Ssjswkw/featured}), kače snimke celih predavanja (\url{https://www.linkedin.com/company/13055153/}). 
+
+\newpage
+
+\section{JS Belgrade}
+\label{sec:JSBM}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.25]{JS_logo.png}
+\end{center}
+\caption{JS Belgrade logo}
+\label{fig:JS_slika}
+\end{figure}
+
+JavaScript je skriptni programski jezik koji je inicijalno napravljen za veb programiranje na klijentskoj strani. JavaScript se interpretira i danas se može izvršavati i van brauzera, može se izvršavati i na serveru, zapravo može se izvršavati na bilo kojem uređaju koji ima specijalan program nazvan JavaScript engine \cite{aboutJS}. 
+
+JS Belgrade je organizacija osnovana 2014. godine od strane Slobodana Stojanovića, Bogdana Gavrilovića i Alexandera Simovića. Cilj ove organizacije je povezivanje ljudi zainteresovanih za JavaScript kroz mesečna okupljanja, nevezano od toga da li su svakodnevni korisnici koji su dobro upoznati s programskim jezikom ili su početnici koji samo žele da saznaju nešto više o JavaScript-u. Logo ove grupe prikazan je na slici \ref{fig:JS_slika} \cite{JS_Belgrade_meetup_pocetna}.
+
+Prvo JS Belgrade okupljanje bilo je 27.12.2014. u Beogradu, u prostorijama Cloud Horizon-a. Na ovom okupljanju je prisustvovalo 15 osoba i bilo je reči na temu "AngularJS - juče, danas i sutra". Do sada je organizovano 36 okupljanja u Beogradu, ne računajući radionice i druženja u kafiću Koffein. Od tih 36 okupljanja, koliko je okupljanja održano u kojoj godini možete videti na tabeli \ref{tab:JStabela1}, a broj prisutnih na svakom od tih okupljanja možete videti na grafikonu \ref{fig:JSgrafik}, a detalje o 7 najposećenijih okupljanja možete videti na tabeli \ref{tab:JStabela2}. Okupljanja su se organizovala na različitim lokacijama, od kojih je većina bila u ICT HUB prostorijama i Cloud Horizon prostorijama, ali i na drugim lokacijama poput Matematičkog fakulteta, Crowne Plaza Belgrade, Startit Centar itd. Informacije o prošlim i budućim okupljanjima možete naći na linku: \url{https://www.meetup.com/JS-Belgrade-Meetup/events/}. Svako ko hoće može da prisustvuje okupljanjima kao slušaoc, samo je potrebno na vreme se prijaviti jer su mesta ograničena. Svako ko želi da priča na okupljanju zahtev za razgovor može podneti na linku: \url{www.jsbelgrade.org/teme/}, a uputstvo za prijavu ima na linku: \url{https://github.com/JSBelgrade/cfp}. Počev od 19.01.2016., svakog drugog utorka od 8 do 10 ujutru  se organizuje druženje u kafiću Koffein, u Uskočkoj 8, u Beogradu, sa ciljem da se okupe ljudi zainteresovani za JavaScript i upoznaju. Na tom druženju nema predavanja niti bilo kakvog isplaniranog programa, već je to druženje uz kafu i pričanje o raznim temama koje ne moraju biti vezane za JavaScript \cite{JS_Belgrade_meetup_events}.
+
+Ideja JS Belgrade je da s vremena na vreme gostuju i van Beograda. Prvo takvo okupljanje je bilo u Nišu 19.03.2016. na kom je prisustvovalo 7 osoba. Drugo takvo okupljanje bila je radionica u Inđiji 26.03.2016. i to su jedina dva okupljanja van Beograda \cite{JS_Belgrade_meetup_events}.
+
+Github repozitorijum na linku: \url{https://github.com/JSBelgrade}, facebook grupa na linku: \url{https://www.facebook.com/jsbelgrade/},
+za diskusiju i sva dodatna pitanja o sastancima i o temama vezanim za JavaScript možete koristiti link: \url{http://slack.jsbelgrade.org}, veb-sajt JS Belgrade grupe možete naci na linku: \url{http://jsbelgrade.org/}.
+
+\begin{table}[h!]
+\begin{center}
+\caption{JS Belgrade okupljanja u Beogradu}
+\begin{tabular}{ |c|c|c|c|c|c|c|c| } 
+ \hline
+ godina & 2014 & 2015 & 2016 & 2017 & 2018 & 2019 & 2020 \\ 
+ \hline
+ \makecell[c]{br.\\okupljanja} & 1 & 12 & 8 & 8 & 5 & 1 & 1 \\
+ \hline
+\end{tabular}
+\label{tab:JStabela1}
+\end{center}
+\end{table}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={Redni broj okupljanja},
+    ylabel={Broj posetilaca},
+    xmin=0, xmax=40,
+    ymin=0, ymax=260,
+    xtick={0,5,10,15,20,25,30,35,40},
+    ytick={0,20,40,60,80,100,120,140,160, 180, 200, 220, 240, 260},
+    legend pos=north west,
+    ymajorgrids=true
+]
+
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+    (1,15)(2,12)(3,15)(4,19)(5,99)(7,12)(8,22)(9,110)(10,244)(11,99)(12,110)(13,25)(14,30)(15,103)(16,17)(17,29)(18,90)(19,67)(20,20)(21,30)(22,210)(23,138)(24,82)(25,96)(26,101)(27,99)(28,47)(29,70)(30,70)(31,74)(32,76)(33,80)(34,98)(35,80)(36,45)
+    };
+    
+\end{axis}
+\end{tikzpicture}
+\caption{Posećenost na JS Belgrade okupljanjima u Beogradu(nedostaju podaci za šesto okupljanje)}
+\label{fig:JSgrafik}
+\end{figure}
+
+\begin{table}[h!]
+\begin{center}
+\caption{Sedam najposećenijih JS Belgrade okupljanja}
+\begin{tabular}{|l|l|l|} \hline
+\thead{Tema} & \thead{Predavač} & \thead{Datum}\\ \hline
+\makecell[l]{Hoodie, npm and semantic release}&\makecell[l]{Stephan Bonnemann}&08.08.2015.\\ \hline
+\makecell[l]{Different Characters \\Code Golf, JavaScript, Creative coding,\\ Hacks}&\makecell[l]{Martin Kleppe}&05.09.2015.\\ \hline
+\makecell[l]{Internet of Things using JavaScript for \\funand profit}&\makecell[l]{Dejan Dimić}&28.11.2015.\\ \hline
+\makecell[l]{Mikroservisi (skoro) za dz: AWS \\+ Node.JS}&\makecell[l]{Gojko Adžić}&13.02.2016.\\ \hline
+\makecell[l]{Theme 1: ``Async approaches: Promises\\vs Callbacks''\\Theme 2: ``Extreme performances: JS\\vs ASMjs vs PNaCl vs UWP''}&\makecell[l]{Miloš Žikić}&28.01.2017.\\ \hline
+\makecell[l]{Theme 1: ``Introduction to Elm''\\Theme 2: ``Developer UX, REST \\and the rest''}&\makecell[l]{Bojan Matić\\(Theme 1)\\Miloš Solujić\\(Theme 2)}&18.02.2017.\\ \hline
+\makecell[l]{``React component testing using \\snapshots''}&\makecell[l]{Boris Aržentar}&26.06.2017.\\ \hline
+\end{tabular}
+\label{tab:JStabela2}
+\end{center}
+\end{table}
+
+\newpage
+\clearpage
+
+\section{Zaključak}
+\label{sec:zakljucak}
+
+Mi, autori, iskreno se nadamo da naš rad uspešno prenosi atmosferu sa Beogradskih okupljanja i da daje korisne informacije o njima.
+Beograd nudi dosta zanimljivih sadržaja ljudima iz IT sveta.
+Većina organizacija priređuje besplatna okupljanja, čini se da je jedini korak koji bi trebalo preduzeti blagovremeno informisanje o predstojećim okupljanjima.
+Potrudili smo se da iznesemo dovoljno podataka kako bismo omogućili bolji uvid i odgovore na mnogobrojna pitanja koja se nameću. Neke važne podatke smo podelili, a za neke smo ostavili uputstva za pronalaženje. Svako je dobrodošao da se za dodatne informacije o ovom radu, njegovom sadržaju ili eventualnim zamerkama obrati autorima.
+
+% Treba napomenuti da je za vreme pisanja ovog rada u republici Srbiji na snazi vanredno stanje povod pandemije virusom COVID-19. Za vreme pandemije, 
+% ne održava se ni jedno okupljanje, što je trenutno posledica uredbe Vlade o okupljanjima građana za vreme navedenog vanrednog stanja.
+
+\addcontentsline{toc}{section}{Literatura}
+\bibliography{seminarski} 
+\bibliographystyle{unsrt}
+
+\end{document}
+
