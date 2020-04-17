@@ -17,7 +17,6 @@
 \hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
 
 \usepackage{listings}
-
 %\newtheorem{primer}{Пример}[section] %ćirilični primer
 \newtheorem{primer}{Primer}[section]
 
@@ -54,6 +53,10 @@
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
 
+% DODATNE OPCIJE
+\addtolength{\topskip}{0pt plus 10pt} % Namece foosnote da ostanu na trenutnoj strani
+\usepackage{float} % Pomocu ovog paketa mozemo dodati slici opciju H (koja onemogucava proizvoljno pomeranje slike)
+
 \begin{document}
 
 %\title{Desavanja u Beogradu: 8 udruzenja koja organizuju redovne IT strucne sastanke (meet up) \\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
@@ -82,7 +85,7 @@ Susret (eng. \textit{meetup}) je okupljanje ljudi sa istim interesovanjem za nek
 U daljem tekstu biće predstavljene sledeće organizacije: PHP Srbija, WorldPress Serbia, Python Belgrade, Risk, Belgrade Crypto Community, Agile Serbia i JS Belgrade. Organizacije su birane tako da su u trenutku pisanja rada redovno održavala okupljanja u Beogradu. U Srbiji, pored Beograda, u nekoj značajnijem broju postoje udruženja i u Novom Sadu i Nišu. Udruženja u Srbiji raspoređena po gradovima možete videti na linku: \url{https://www.meetup.com/cities/rs/}.
 
 \section{PHP Srbija}
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.25]{php_gray.jpg}
 \end{center}
@@ -104,7 +107,7 @@ Iz ovog okupljanja stvorilo se još nekoliko samostalnih zajednica kao na primer
 Neka od već održanih predavanja sa okupljanja i konferencija dostupna su na YouTube kanalu PHPSrbijaVideo \footnote{\url{https://www.youtube.com/user/PHPSrbijaVideo/}}, a udruženje je takođe aktivno i na Facebook stranici PHP Srbija\footnote{\url{https://www.facebook.com/udruzenjeprogramera.rs}} .
 
 
-\begin{table}[h!]
+\begin{table}[H]
 \begin{center}
 \caption{Neke od tema sa PHP Srbija okupljanja}
 \begin{tabular}{|l|l|l|} \hline
@@ -147,7 +150,7 @@ FigDice template engine&Nikola Posa&21.07.2015.\\ \hline
 \end{figure}
 
 \section{WordPress Serbia}
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.5]{wp.jpg}
 \end{center}
@@ -159,7 +162,7 @@ WordPress predstavlja jedan od najpopularnijih sistema za upravljanje sadržajem
 Prvo WordPress Serbia okupljanje održano je u aprilu 2013. godine. Sledeće godine održavaju se ukupno četiri okupljanja, od čega su prva tri održana u Mikser House-u, dok je poslednji održan u Domu omladine u tribinskoj sali. Ubrzo nastaje potreba širenja zajednice, tako da okupljanja počinju i u Nišu, Inđiji, Šapcu, Boru, Vranju, Kruševcu, Subotici, Novom Sadu, Zrenjaninu itd. Pored okupljanja kreću i sa radionicama koje su namenjene svima koji žele da nauče više o WordPress-u. Danas se u Beogradu okupljanja naješće organizuju u StartIt centru \cite{aboutStarit}.
 
 Teme koje se obrađuju na okupljanjima su prilagođene početnicima, programerima, kao i ostatku IT zajednice. Neke od tema sa okupljanja se mogu videti u tabeli \ref{tab:tabelaWordpress}. 
-\begin{table}[h!]
+\begin{table}[H]
 \begin{center}
 \caption{Neke od tema sa WordPress Serbia okupljanja}
 \begin{tabular}{|l|l|l|} \hline
@@ -182,7 +185,7 @@ Pored okupljanja, WordPress Serbia organizuje i WordCamp konferencije na kojima 
 \section{Python Belgrade}
 \label{sec:pybgd}
 
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.3\textwidth]{pybgd.png}
   \caption{Python Belgrade logo}
@@ -192,54 +195,63 @@ Pored okupljanja, WordPress Serbia organizuje i WordCamp konferencije na kojima 
 Python Belgrade čiji logo se nalazi na slici \ref{fig:Pythonlogo} je nevladina organizacija koja organizuje okupljanja za sve Python entuzijaste. Ova okupljanja namenjena su svim
 zainteresovanima za jezik Python, pre svega programerima, ali i svim onima koji žele da upotpune svoje znanje ovog programskog jezika i njegovih mogućnosti.
 
-Jezik Python je nesumnjivo jedan od najpopularnijih programskih jezika danas. Sudeći po istraživanju kompanije TIOBE, jezik Python ima sigurno mesto u top 10 najpretraživanijih jezika na poznatim veb pretraživačima. \cite{pythonPopular}.
+Jezik Python je nesumnjivo jedan od najpopularnijih programskih jezika danas. Sudeći po istraživanju kompanije TIOBE, jezik Python ima sigurno mesto u top 10 najpretraživanijih jezika na poznatim veb pretraživačima \cite{pythonPopular}. A naučni članak iz 2017. godine profesora K. R. Srinath-a sa Pragati Mahavidyalaya fakulteta u Indiji karakteriše Python kao programski jezik koji najbrže raste \cite{pythonFastGrow}.
 
 Kako i samo ime organizacije kaže, sastanci se organizuju na teritoriji grada Beograda. Ova organizacija nema svoje prostorije, a lokacija, kao i ostale informacije
-za sledeći susret dostupne su na oficijalnom veb-sajtu organizacije (\url{https://pythonbelgrade.com/}). Ova organizacija je svakako jedna od značajnijih IT organizacija koje organizuju okupljanja na teritoriji Beograda. Osnovana je 2015. godine i od tada se predavanja održavaju svakih par meseci bez striktnog međuintervala. 
+za sledeći susret dostupne su na oficijalnom veb-sajtu organizacije (\url{https://pythonbelgrade.com}). Ova organizacija je svakako jedna od značajnijih IT organizacija koje organizuju okupljanja na teritoriji Beograda. Osnovana je 2015. godine i od tada se predavanja održavaju svakih par meseci bez striktnog međuintervala. 
 
-Na čelu ove organizacije, ispred grupe mladih ljudi, je njen domaćin i osnivač \textit{Bojan Jovanović}. Bojan je mladi entuzijasta koji je i sam imao dosta radnog iskustva u ovom jeziku nakon završenih studija na
-Elektrotehničkom fakultetu. Pored toga što je osnivač Python Belgrade organizacije, on je i jedan od osnivača PyCon Balkan konferencije (\url{https://pyconbalkan.com/}). Ova konferencija važi za jednu od najpoznatinjih konferencija vezanih za programiranje na ovim prostorima.
+Na čelu ove organizacije, ispred grupe mladih ljudi, je njen domaćin i osnivač Bojan Jovanović. Bojan je mladi entuzijasta koji je i sam imao dosta radnog iskustva u ovom jeziku nakon završenih studija na
+Elektrotehničkom fakultetu. Pored toga što je osnivač Python Belgrade organizacije, on je i jedan od osnivača PyCon Balkan konferencije \footnote{\url{https://pyconbalkan.com}}. Ova konferencija važi za jednu od najpoznatinjih konferencija vezanih za programiranje na ovim prostorima.
 
-Predavači na Python Belgrade okupljanjima su najčešće ljudi koji su zaposleni ili imaju neke veze sa IT sektorom, ali neretko i ljudi sa univerziteta. \cite{pybgdSpeakers} Iako se predavanja održavaju na srpskom jeziku, dešavalo se da zbog prisustva stranih slušalaca u duhu solidarnosti bude napravljen izuzetak i predavanje se održi na engleskom jeziku. Na okupljanjima se nesumnjivo oseća mladalački duh i želja za napredovanjem. Uvek vlada prijateljska atmosfera, nađu se tu grickalice i osveženje, pa nije ni čudo što se okupljeni između sebe zovu ``Pytosi''.
+Predavači na Python Belgrade okupljanjima su najčešće ljudi koji su zaposleni ili imaju neke veze sa IT sektorom, ali neretko i ljudi sa univerziteta \cite{pybgdSpeakers}. Iako se predavanja održavaju na srpskom jeziku, dešavalo se da zbog prisustva stranih slušalaca u duhu solidarnosti bude napravljen izuzetak i predavanje se održi na engleskom jeziku. Neke od predavača i tema okupljanja možete videti u tabeli \ref{tab:tabelaPythonBgd}.
 
-Putem veb-sajta \url{https://pythonbelgrade.com/} se može prijaviti za prisustvo nekom od okupljanja, a obaveštenja se objavljuju i na facebook grupi \href{https://www.facebook.com/python.belgrade/}{@python.belgrade} i \href{https://pythonbelgrade.slack.com/join/shared_invite/enQtNTM0OTI4NzY3NDI2LTk2OThkNjQ2YmM5NWNkNTBjMjU3NDY0NjcyNDFiYmZmNjQ4MDE3NjczYWM0NTk1YWVlYzlhNGIwYjU3NjA3Y2Y}{slack kanalu}. Svako ko želi da se prijavi u svojstvu predavača potrebno je da popuni odgovarajuću veb formu za prijavu na \href{https://pythonbelgrade.com/}{veb-sajtu} organizacije (\url{https://pythonbelgrade.com/#contact}). Predavanja se mogu pratiti i putem video linka uživo, gde se takođe mogu postavljati pitanja. Neka od već održanih predavanja dostupna su na YouTube kanalu ove organizacije (\url{https://www.youtube.com/channel/UCH79IYl8rv2f2BrYs5owB2A}).
+\begin{table}[H]
+\caption{Neke od tema sa Python Belgrade okupljanja}
+\begin{center}
+\begin{tabular}{|l|l|l|} \hline
+\thead{Tema} & \thead{Predavač}& \thead{Datum}\\ \hline
+\makecell[l]{RabbitMQ federation\\between datacenters}&\makecell[l]{Ivan Mitić\\Telesign}&31.6.2019.\\ \hline
+\makecell[l]{Transforming functions \\ into classes - Why and how}&\makecell[l]{Martin Angelov\\Hacksoft (Bulgaria)}&25.1.2019.\\ \hline
+\makecell[l]{Creating melody in Python}&\makecell[l]{Neven Munđar\\GoodCode (Zagreb)}&25.5.2018.\\ \hline
+\makecell[l]{Dictionary under the hood}&\makecell[l]{Željko Kojić}&26.5.2017.\\ \hline
+\end{tabular}
+\label{tab:tabelaPythonBgd}
+\end{center}
+\end{table}
 
+Putem veb-sajta organizacije se može prijaviti za prisustvo nekom od okupljanja, a obaveštenja se objavljuju i na facebook grupi \footnote{\url{https://www.facebook.com/python.belgrade}} i slack kanalu \footnote{\url{https://pythonbelgrade.herokuapp.com}}. Svako ko želi da se prijavi u svojstvu predavača potrebno je da popuni odgovarajuću formu za prijavu na veb-sajtu organizacije. Predavanja se mogu pratiti i putem video linka uživo, gde se takođe mogu postavljati pitanja. Neka od već održanih predavanja dostupna su na YouTube kanalu ove organizacije \footnote{\url{https://www.youtube.com/channel/UCH79IYl8rv2f2BrYs5owB2A}}.
 
 \section{RISK}
 \label{sec:riskmatf}
 
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.4\textwidth]{riskmatf.png}
   \caption{RISK logo}
   \label{fig:RISKlogo}
 \end{figure}
 
-RISK predstavlja organizaciju koja za cilj ima okupljanje i edukaciju studenata zainteresovanih za oblast računarstva i informatike. \cite{aboutRisk}
-Logo RISK-a se može videti na slici \ref{fig:RISKlogo}. Ova organizacija ima svoju veb stranu, međutim informacije su dostupne i na facebook grupi, gde se unapred najavljuju okupljanja \url{https://www.facebook.com/groups/1192849077458638/}. Predavanju može prisustvovati bilo ko, mada je poželjno da se prijavi putem veb forme koja je dostupna pre svakog okupljanja. Najveći broj slušalaca su
+RISK predstavlja organizaciju koja za cilj ima okupljanje i edukaciju studenata zainteresovanih za oblast računarstva i informatike \cite{aboutRisk}.
+Logo RISK-a se može videti na slici \ref{fig:RISKlogo}. Ova organizacija ima svoju veb stranu (\url{http://risk.matf.bg.ac.rs}), međutim informacije su dostupne i na facebook grupi \footnote{\url{https://www.facebook.com/groups/1192849077458638}}, gde se unapred najavljuju okupljanja. Predavanju može prisustvovati bilo ko, mada je poželjno da se prijavi putem veb forme koja je dostupna pre svakog okupljanja. Najveći broj slušalaca su
 studenti Matematičkog, ali tu su i kolege sa ETF-a, FON-a i ostalih srodnih fakulteta.
 
-Udruženje je osnovano u decembru 2016. godine, kada je i održano prvo okupljanje. Okupljanja se organizuju u zgradi ``Matematičkog fakulteta'', a do danas ih je održano preko 20. Najčešće se održavaju vikendom, kada postoje mogućnosti za to. Predavač može biti bilo ko zainteresovan i voljan da podeli svoje programersko umeće. Informacije o nekim okupljanjima se mogu naci na tabeli \ref{tab:tabelaRISK}. Na čelu ove studentske organizacije je Nemanja Mićović, koji je i sam bio student Matematičkog fakulteta, a sada je asistent i pohađa doktorske studije. Pored Nemanje, u organizaciji učestvuju i studenti sa osnovnih i master studija (\url{http://risk.matf.bg.ac.rs/organizacija.html}).
+Udruženje je osnovano u decembru 2016. godine, kada je i održano prvo okupljanje. Okupljanja se organizuju u zgradi Matematičkog fakulteta, a do danas ih je održano preko 20. Najčešće se održavaju vikendom, kada postoje mogućnosti za to. Predavač može biti bilo ko zainteresovan i voljan da podeli svoje programersko umeće. Informacije o nekim okupljanjima se mogu naci na tabeli \ref{tab:tabelaRISK}. Na čelu ove studentske organizacije je Nemanja Mićović, koji je i sam bio student Matematičkog fakulteta, a sada je asistent i pohađa doktorske studije. Pored Nemanje, u organizaciji učestvuju i studenti sa osnovnih i master studija.
 
 Na predavanjima se obrađuju razne teme vezane za programiranje. Neretko su to radni okviri za razvoj aplikacija, programerski alati i druge tehnologije.
-Pored ovih okupljanja, organizacija može da se pohvali i inspirativnim blog postovima koji su izuzetno zanimljivi. (\url{http://risk.matf.bg.ac.rs/blog.html}).
+Pored ovih okupljanja, organizacija može da se pohvali i inspirativnim blog postovima dostupnim na njihovom veb-sajtu, koji su izuzetno zanimljivi.
 
 Svoj doprinos ovoj organizaciji možete ostaviti u vidu saveta, kritika i predloga popunjavanjem odgovarajuće forme na sajtu. Ukoliko ste voljni, možete se uključiti
-i u neki od projekata ove organizacije čiji su izvorni kodovi dostupni na github-u \url{https://github.com/riskmatf/}.
+i u neki od projekata ove organizacije čiji su izvorni kodovi dostupni na github-u \footnote{\url{https://github.com/riskmatf}}.
 
-\begin{table}[h!]
+\begin{table}[H]
 \caption{Neke od tema sa RISK okupljanja}
 \begin{center}
 \begin{tabular}{|l|l|l|} \hline
 \thead{Tema} & \thead{Predavač}& \thead{Datum}\\ \hline
-\makecell[l]{Wifi Hacking}&\makecell[l]{Hacklab Beograd}&23.2.2019.\\ \hline
 \makecell[l]{Uvod u duboko učenje kroz\\PyTorch}&\makecell[l]{Nemanja Mićović}&3.11.2019.\\ \hline
 \makecell[l]{Moderno Android Programiranje}&\makecell[l]{Aleksandar Stefanović}&10.3.2019.\\ \hline
-\makecell[l]{Uvod u razvoj veb aplikacija\\kroz Flask radni okvir.}&\makecell[l]{Stevan Nestorović}&18.3.2018.\\ \hline
-\makecell[l]{Uvod u BASH skripting}&\makecell[l]{Peđa Trifunov}&2.12.2017.\\ \hline
-\makecell[l]{Uvod u blockhain tehnologije\\i decentralizaciju.}&\makecell[l]{DECENTER,\\origintrail}&24.12.2017.\\ \hline
+\makecell[l]{Uvod u blockhain tehnologije\\i decentralizaciju.}&\makecell[l]{DECENTER,\\Origintrail}&24.12.2017.\\ \hline
 \makecell[l]{Git i Github}&\makecell[l]{Marko Jeremić}&12.12.2016.\\ \hline
-
 \end{tabular}
 \label{tab:tabelaRISK}
 \end{center}
@@ -250,7 +262,7 @@ i u neki od projekata ove organizacije čiji su izvorni kodovi dostupni na githu
 \section{Belgrade Crypto Community}
 \label{sec:bgdcs}
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.3\textwidth]{bcc_logo.png}
   \caption{Belgrade Crypto Community logo}
@@ -270,7 +282,7 @@ Bilo je i nekoliko radionica, na kojima su učesnici mogli  da se upoznaju sa lo
 
 Forme za prijavu u svojstvo predavača ili slušalaca je moguće naći na stranici Belgrade Crypto Community sajta Meetup \footnote{\url{https://www.meetup.com/Belgrade-Crypto-Community/}}. Belgrade Crypto Community ima stranice na društvenim mrežama facebook\footnote{\url{https://www.facebook.com/BelgradeCryptoCommunity/}}, twitter \footnote{\url{https://twitter.com/Belgrade_Crypto}}, instagram\footnote{\url{https://www.instagram.com/belgrade_crypto/}}, preko kojih informiše o svojim aktivnostima. Pojedine susrete i video tutoriale možete naći na You-Tube kanalu Belgrade Crypto Community\footnote{\url{https://www.youtube.com/channel/UCCv76WWtH9LppS65OCWpI4A/featured}}.
 
-\begin{table}[h!]
+\begin{table}[H]
 \caption{Neke od tema sa Belgrade Crypto Community okupljanja}
 \begin{center}
 \begin{tabular}{|l|l|l|l|} \hline
@@ -287,7 +299,7 @@ Forme za prijavu u svojstvo predavača ili slušalaca je moguće naći na strani
 \section{Agile Serbia}
 \label{sec:agsrb}
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.3\textwidth]{agile_srb.png}
   \caption{Agile Serbia logo}
@@ -306,7 +318,7 @@ Najnovije informacije možete naći na zvaničnom sajtu  \url{http://www.agile-s
 %linkedin \footnote{\url{https://www.linkedin.com/company/13055153/}}. 
 %\cite{aboutAgS} 
 
-\begin{table}[h!]
+\begin{table}[H]
 \caption{Neke od tema sa Agile Serbia okupljanja}
 \begin{center}
 \begin{tabular}{|l|l|l|l|} \hline
@@ -328,7 +340,7 @@ Najnovije informacije možete naći na zvaničnom sajtu  \url{http://www.agile-s
 \section{JS Belgrade}
 \label{sec:JSBM}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.25]{JS_logo.png}
 \end{center}
@@ -346,7 +358,7 @@ Ideja JS Belgrade je da s vremena na vreme gostuju i van Beograda. Prvo takvo ok
 
 Za diskusiju i sva dodatna pitanja o okupljanjima i o temama vezanim za JavaScript može se koristiti slack\footnote{Slack na linku: \url{http://slack.jsbelgrade.org}.} ili mejl\footnote{Mejl organizacije: jsbelgradeorg@gmail.com.} organizacije. Organizacija ima i društvene mreže twitter\footnote{Twitter grupa na linku: \url{https://twitter.com/JSBelgrade}.} i facebook\footnote{Facebook grupa na linku: \url{https://www.facebook.com/jsbelgrade/}.}.
 
-\begin{table}[h!]
+\begin{table}[H]
 \begin{center}
 \caption{JS Belgrade okupljanja u Beogradu}
 \begin{tabular}{ |c|c|c|c|c|c|c|c| } 
@@ -388,7 +400,7 @@ Za diskusiju i sva dodatna pitanja o okupljanjima i o temama vezanim za JavaScri
 \label{fig:JSgrafik}
 \end{figure}
 
-\begin{table}[h!]
+\begin{table}[H]
 \begin{center}
 \caption{Četiri najposećenijih JS Belgrade okupljanja}
 \begin{tabular}{|l|l|l|} \hline
@@ -409,15 +421,15 @@ Za diskusiju i sva dodatna pitanja o okupljanjima i o temama vezanim za JavaScri
 \section{Zaključak}
 \label{sec:zakljucak}
 
-Mi, autori, iskreno se nadamo da naš rad uspešno prenosi atmosferu sa Beogradskih okupljanja i da daje korisne informacije o njima.
+Mi, autori, potrudili smo se da u ovom radu prenesemo atmosferu sa Beogradskih okupljanja i da damo korisne informacije o njima.
 Beograd nudi dosta zanimljivih sadržaja ljudima iz IT sveta.
-Većina organizacija priređuje besplatna okupljanja, čini se da je jedini korak koji bi trebalo preduzeti blagovremeno informisanje o predstojećim okupljanjima.
-Potrudili smo se da iznesemo dovoljno podataka kako bismo omogućili bolji uvid i odgovore na mnogobrojna pitanja koja se nameću. Neke važne podatke smo podelili, a za neke smo ostavili uputstva za pronalaženje. Svako je dobrodošao da se za dodatne informacije o ovom radu, njegovom sadržaju ili eventualnim zamerkama obrati autorima.
+Većina organizacija priređuje besplatna okupljanja, čini se da je jedini korak koji bi trebalo preduzeti blagovremeno informisanje o predstojećim događajima.
+Izneli smo podatake o organizacijama i okupljanjima, kao i odgovore na mnogobrojna pitanja koja se nameću. Neke važne informacije smo podelili, a za neke smo ostavili uputstva za pronalaženje. Svako je dobrodošao da se za dodatna pitanja o ovom radu ili eventualnim zamerkama na rad obrati autorima.
 
 % Treba napomenuti da je za vreme pisanja ovog rada u republici Srbiji na snazi vanredno stanje povod pandemije virusom COVID-19. Za vreme pandemije, 
 % ne održava se ni jedno okupljanje, što je trenutno posledica uredbe Vlade o okupljanjima građana za vreme navedenog vanrednog stanja.
 
-%\newpage
+\newpage
 
 \addcontentsline{toc}{section}{Literatura}
 \bibliography{seminarski} 
